@@ -28,4 +28,6 @@ yarn-error.log*
 
 #public
 
+src/App.js
+
 
