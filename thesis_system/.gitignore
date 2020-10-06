@@ -24,8 +24,7 @@ yarn-error.log*
 
 #public
 public/
-*.js
-*.svg
-*.css
-!src/App.js
-!src/App.css
+
+*.json
+
+
