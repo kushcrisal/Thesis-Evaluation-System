@@ -1,0 +1,54 @@
+.Nav-bar {
+  background-color: blue;
+
+  height: 1%;
+
+  display: flex;
+
+  align-items: center;
+
+  box-shadow: 5px 10px 8px #888888;
+}
+.Nav-members {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center, flex-start;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+.Nav-items {
+  display: flex;
+  width: 100%;
+  grid-template-columns: repeat(5, auto);
+  gap: 20px;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  list-style: none;
+}
+
+.Nav-links a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  font-size: large;
+  font-weight: 500px;
+  justify-content: center;
+}
+
+.logo {
+  width: 60px;
+  display: block;
+}
+.name-block {
+  width: 100%;
+  height: auto;
+  margin-left: 5px;
+  padding-top: 1.55%;
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+}
