@@ -1,5 +1,6 @@
 .body {
   position: absolute;
+  margin-top: 60px;
   background-image: url(college.jpg);
   background-repeat: no-repeat;
   background-size: cover;

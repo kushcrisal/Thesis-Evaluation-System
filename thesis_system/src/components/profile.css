@@ -1,0 +1,169 @@
+:root {
+  inner: white;
+}
+:root {
+  outer: #e6e6fa;
+}
+
+.student_body {
+  position: absolute;
+  margin-top: 60px;
+
+  padding-left: 200px;
+  padding-right: 200px;
+  width: 100%;
+  height: 91.2%;
+
+  overflow: scroll;
+  background-color: #e6e6fa;
+}
+
+.studentinfo {
+  display: flex;
+  margin: 1%;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #e6e6fa;
+  height: 25%;
+  flex-direction: row;
+}
+.studenticon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100px;
+  height: 100%;
+  justify-content: center;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.studentdetails {
+  position: relative, fixed;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.name_updateblock {
+  position: relative;
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.studentname {
+  position: relative;
+  width: 80%;
+
+  font-family: sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  color: blue;
+  margin-bottom: 10px;
+}
+.studentother {
+  font-family: sans-serif;
+  margin-top: 3px;
+
+  margin-right: 20%;
+
+  font-size: large;
+  color: blue;
+}
+.student-button-section {
+  position: relative;
+  width: 20%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.studentmarks {
+  position: relative;
+  margin: 1%;
+  padding: 15px;
+
+  height: 60%;
+}
+.update_button {
+  position: relative;
+  background-color: blue;
+  width: 100px;
+
+  border-radius: 10px;
+}
+
+.marks_section_title {
+  position: relative;
+  height: auto;
+  text-align: center;
+
+  justify-items: center;
+  background-color: blue;
+  border-radius: 10px;
+  align-content: center;
+}
+.marks_name {
+  text-align: center;
+
+  color: white;
+  font-size: x-large;
+}
+.marksinfo_block {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+.marks_giver {
+  position: relative;
+  width: 140px;
+  height: auto;
+  background-color: #e6e6fa;
+
+  border-bottom-left-radius: 10px;
+}
+.marks_value {
+  position: relative;
+  width: 85%;
+  background-color: white;
+  height: auto;
+  border-bottom-right-radius: 10px;
+}
+
+.divider {
+  position: relative;
+  height: 100%;
+  background-color: #e6e6fa;
+  width: 1px;
+}
+.Buttongroup {
+  position: relative;
+  width: 100%;
+  background-color: blue;
+}
+
+.Marks_Giver_Button {
+  background-color: blue;
+  border-radius: 0;
+  position: relative;
+  width: 100%;
+}
+.Marks_Giver_Button:hover {
+  background-color: darkblue;
+}
+.Marks_Giver_Button:focus {
+  background-color: darkblue;
+
+  border-color: white;
+}
