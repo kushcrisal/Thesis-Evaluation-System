@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
@@ -7,9 +7,12 @@ import { FaUserTie} from "react-icons/fa";
 
 import "./profile.css";
 import FinalTerm from "./exam/FinalTerm"
+import MidTerm from "./exam/MidTerm"
 
 
 function Student_profile() {
+
+  const [exam,setExam]=useState("MidTerm")
   return <div className="student_body"> 
 
   <div className="studentinfo">
@@ -32,7 +35,17 @@ function Student_profile() {
 
     </div>
   
-  
+  <div className="toggle">
+    <div>
+      <ButtonGroup role='group' toggle>
+      <Button autoFocus={true} className="ToggleButton" onClick={()=>setExam("MidTerm")}>MidTerm</Button>
+
+
+
+     <Button   onClick={()=>setExam("FinalTerm")} className="ToggleButton1">FinalTerm</Button>
+     </ButtonGroup>
+    </div>
+  </div>
   
   
 
@@ -40,7 +53,8 @@ function Student_profile() {
 
   
     <div className="studentmarks">
-      <FinalTerm/>
+      {  exam==="MidTerm" &&      <MidTerm/>}
+      {exam==="FinalTerm" &&  <FinalTerm/>}
   
   
   

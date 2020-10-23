@@ -1,0 +1,68 @@
+.marks_section_title {
+  position: relative;
+  height: auto;
+  text-align: center;
+
+  justify-items: center;
+  background-color: blue;
+  border-radius: 10px;
+  align-content: center;
+}
+.marks_name {
+  text-align: center;
+
+  color: white;
+  font-size: x-large;
+}
+.marksinfo_block {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+.marks_giver {
+  position: relative;
+  width: 140px;
+  height: auto;
+  background-color: #e6e6fa;
+
+  border-bottom-left-radius: 10px;
+}
+.marks_value {
+  position: relative;
+  width: 85%;
+  background-color: white;
+  height: auto;
+  border-bottom-right-radius: 10px;
+}
+
+.divider {
+  position: relative;
+  height: 100%;
+  background-color: #e6e6fa;
+  width: 1px;
+}
+.Buttongroup {
+  position: relative;
+  width: 100%;
+  background-color: blue;
+}
+
+.Marks_Giver_Button {
+  background-color: blue;
+  border-radius: 0;
+  position: relative;
+  width: 100%;
+}
+.Marks_Giver_Button:hover {
+  background-color: darkblue;
+}
+.Marks_Giver_Button:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: darkblue;
+
+  border-color: white;
+}
