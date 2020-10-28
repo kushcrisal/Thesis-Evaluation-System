@@ -10,7 +10,8 @@ import FinalTerm from "./exam/FinalTerm"
 import MidTerm from "./exam/MidTerm"
 
 
-function Student_profile() {
+function Student_profile(props) {
+  
 
   const [exam,setExam]=useState("MidTerm")
   return <div className="student_body"> 
@@ -20,12 +21,12 @@ function Student_profile() {
     <div className="studentdetails">
     
     <div className="name_updateblock">
-   <text className="studentname">Kushal Shrestha</text>
+<text className="studentname">{props.location.state.firstname} {props.location.state.lastname}</text>
    <div className="student-button-section"><Button variant="primary" className="update_button">Update</Button></div>
    </div>
    <div className="studentrow">
-   <text className="studentother">Roll no: 074BCT519   </text>
-   <text className="studentother">Thesis-Title: Biotechnology</text>
+   <text className="studentother">Roll no: {props.location.state.roll}   </text>
+<text className="studentother">Thesis-Title:{props.location.state.thesis} </text>
    
    </div>
   
