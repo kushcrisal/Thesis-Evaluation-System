@@ -1,0 +1,116 @@
+.Body {
+  position: absolute;
+  background-color: #e6e6fa;
+  margin-top: 60px;
+  width: 100%;
+  height: 91%;
+}
+.form {
+  padding: 55px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 65%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: blue;
+  margin: 10px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 30px 0 rgba(0, 0, 0, 0.8);
+}
+.form h1 {
+  font-size: 2rem;
+  text-align: start;
+  width: 80%;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.form-inputs {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.form-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 7px;
+  color: #ffffff;
+}
+.form-input {
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 50%;
+
+  border: none;
+}
+.form-input::placeholder {
+  color: #595959;
+  font-size: 13px;
+}
+
+.Button {
+  background-color: white; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.form select {
+  height: 30px;
+  width: 30;
+  padding-left: 20px;
+  display: inline-block;
+  height: 20px;
+  width: 20%;
+  border-radius: 2px;
+}
+.form select {
+  padding-left: 30px;
+  display: inline-block;
+
+  border-radius: 2px;
+  height: 20%;
+  width: 40%;
+  margin: 10px 0px;
+}
+.Date {
+  margin-bottom: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#FirstName {
+  margin-right: 15px;
+}
+.registerbutton {
+  width: 100%;
+  background-color: darkblue;
+}
+.yeardate {
+  color: white;
+  font-size: large;
+  margin-left: 100px;
+  font-weight: bold;
+}
+.yearmonth {
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
