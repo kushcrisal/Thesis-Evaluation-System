@@ -7,7 +7,7 @@ const FormRegister = () => {
 
 
 const year=[2074,2075,2076,2077,2078,2079,2080]
-const year_month=["magh","chaitra","Ashwin"]
+const year_month=["magh","chaitra"]
 
 const [date,setDate]=useState("2077")
 const [month,setMonth]=useState("chaitra")

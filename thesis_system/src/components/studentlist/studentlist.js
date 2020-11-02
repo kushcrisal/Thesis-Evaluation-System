@@ -10,7 +10,7 @@ import {Button,ButtonGroup,DropdownButton,Dropdown} from 'react-bootstrap'
 const Studentlist = () => {
 
     const year=[2074,2075,2076,2077,2078,2079,2080]
-const year_month=["magh","chaitra","Ashwin"]
+const year_month=["magh","chaitra"]
 
 
 const [date,setDate]=useState("2074")
