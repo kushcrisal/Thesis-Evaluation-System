@@ -17,6 +17,7 @@ const [date,setDate]=useState("2074")
 const [month,setMonth]=useState("Ashwin")
 const [studentinfo,setStudentinfo]=useState([])
 
+
 useEffect(()=>{
     axios.post('http://localhost:80/thesis/upload.php/',
   {yeardate:date,
@@ -32,7 +33,7 @@ useEffect(()=>{
   
     
   })
-
+  
 
 })
 const setYear=(item)=>
@@ -44,26 +45,40 @@ const setYear=(item)=>
   .then(response=>{
 
    
-    console.log(response)
+    console.log(response.data)
     setStudentinfo(response.data)
+ 
+
+    
+    
+  
+    
+  })
+  
+}
+const  setYearmonth=(item)=>{
+  setMonth(item)
+  axios.post('http://localhost:80/thesis/upload.php/',
+  {yeardate:date,
+  yearmonth:month})
+  .then(response=>{
+
    
+    console.log(response.data)
+    setStudentinfo(response.data)
+ 
+
     
     
   
     
   })
 
-}
-const  setYearmonth=(item)=>{
-  setMonth(item)
+  
 }
 
 
-useEffect(()=>{
-   
 
-}
-)
 
 
     
@@ -98,9 +113,8 @@ useEffect(()=>{
 
 
             <h2>{date}  {month} </h2>
-           
-            
-            { studentinfo !== null &&  studentinfo.map((item)=>(
+        
+            {   studentinfo.map((item)=>(
                  <ul className="listcontainer">
                      <div className="infobox">
                  <li className="text">

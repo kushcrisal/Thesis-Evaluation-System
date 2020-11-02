@@ -29,8 +29,14 @@ const register=()=>{
          month:month
      })
      .then(function (response) {
-      console.log(response);
-      alert("successfully added")
+       console.log(response)
+      if(response.data="failed")
+      {alert("failed")}
+      if(response.data="successfully added")
+      {
+        alert("Successfully added")
+      }
+      
     })
 
     .catch(function (error) {
@@ -80,7 +86,7 @@ const  setYearmonth=(item)=>{
           className='form-label'>
             Student Name 
           </label>
-          <div className ="name">
+          <div className ="name1">
             <input
             id='FirstName'
             type='text'

@@ -16,16 +16,18 @@ export default function Nav() {
 
         <div className="name-block">Tribhuvan University</div>
         <ul className="Nav-items">
+
+        <li className="Nav-links">
+            <NavLink to="/student" activeStyle={{ color: colour }}>
+              <IoMdPersonAdd size={30} />
+            </NavLink>
+          </li>
           <li className="Nav-links">
             <NavLink to="/studentlist" activeStyle={{ color: colour }}>
               <IoMdPerson size={30} />
             </NavLink>
           </li>
-          <li className="Nav-links">
-            <NavLink to="/student" activeStyle={{ color: colour }}>
-              <IoMdPersonAdd size={30} />
-            </NavLink>
-          </li>
+         
 
           <li className="Nav-links">
             <NavLink to="/search" activeStyle={{ color: colour }}>
