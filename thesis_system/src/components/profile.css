@@ -9,6 +9,7 @@
 
   overflow: scroll;
   background-color: #e6e6fa;
+  min-width: 1000px;
 }
 
 .studentinfo {

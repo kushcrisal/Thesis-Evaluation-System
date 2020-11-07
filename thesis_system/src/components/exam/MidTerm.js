@@ -9,14 +9,14 @@ import External from "./MidTerm/external"
 import "./styles/finalterm.css"
 
 
-function MidTerm() {
+function MidTerm(props) {
   const [section,setSection]=useState("supervisor")
   
     return (
         
         <div className="marks_section_title">
       
-        <text className="marks_name">Mid Term</text>
+    <text className="marks_name">Mid Term </text>
         <div className="marksinfo_block">
         <div className="marks_giver">
           <ButtonGroup vertical className="Buttongroup">
@@ -32,10 +32,10 @@ function MidTerm() {
           </div>
          
           <div className="marks_value">
-          {section==="supervisor" && <Supervisor/>}
-            {section==="committee" && <Committee/>}
+          {section==="supervisor" && <Supervisor id={props.id}/>}
+            {section==="committee" && <Committee id={props.id}/>}
             {
-                section==="external" && <External/>
+                section==="external" && <External id={props.id}/>
             }
           </div>
           </div>

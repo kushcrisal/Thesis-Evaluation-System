@@ -54,8 +54,9 @@ function Student_profile(props) {
 
   
     <div className="studentmarks">
-      {  exam==="MidTerm" &&      <MidTerm/>}
-      {exam==="FinalTerm" &&  <FinalTerm/>}
+     
+      {  exam==="MidTerm" &&      <MidTerm id={props.location.state.id}/>}
+      {exam==="FinalTerm" &&  <FinalTerm id={props.location.state.id}/>}
   
   
   

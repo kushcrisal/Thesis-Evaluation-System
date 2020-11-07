@@ -13,13 +13,30 @@ const Studentlist = () => {
 const year_month=["magh","chaitra"]
 
 
-const [date,setDate]=useState("2074")
-const [month,setMonth]=useState("Ashwin")
+const [date,setDate]=useState("2078")
+const [month,setMonth]=useState("chaitra")
 const [studentinfo,setStudentinfo]=useState([])
 
+const deleteinfo=(id)=>{
+  axios.post('http://localhost:80/thesis/delete.php/',
+  {id:id})
+  .then(response=>{
 
-useEffect(()=>{
-    axios.post('http://localhost:80/thesis/upload.php/',
+   
+    console.log(response)
+    
+    
+    
+  
+    
+  })
+
+}
+
+const getstudentinfo=()=>{
+  console.log(month)
+  console.log(date)
+  axios.post('http://localhost:80/thesis/upload.php/',
   {yeardate:date,
   yearmonth:month})
   .then(response=>{
@@ -33,46 +50,40 @@ useEffect(()=>{
   
     
   })
+
+
+}
+
+
+useEffect(()=>{
+  
+    axios.post('http://localhost:80/thesis/upload.php/',
+  {yeardate:date,
+  yearmonth:month})
+  .then(response=>{
+
+   
+    console.log(response)
+    setStudentinfo(response.data)
+   
+  
+  })
   
 
 })
 const setYear=(item)=>
 {
+
   setDate(item)
-  axios.post('http://localhost:80/thesis/upload.php/',
-  {yeardate:date,
-  yearmonth:month})
-  .then(response=>{
 
-   
-    console.log(response.data)
-    setStudentinfo(response.data)
+  getstudentinfo();
  
-
-    
-    
-  
-    
-  })
   
 }
 const  setYearmonth=(item)=>{
   setMonth(item)
-  axios.post('http://localhost:80/thesis/upload.php/',
-  {yeardate:date,
-  yearmonth:month})
-  .then(response=>{
-
-   
-    console.log(response.data)
-    setStudentinfo(response.data)
- 
-
-    
-    
   
-    
-  })
+  getstudentinfo();
 
   
 }
@@ -128,12 +139,18 @@ const  setYearmonth=(item)=>{
                      Title: {item.thesis}
                  </li>
                  </div>
+               
                  <li>
+                   
                      <NavLink to={{pathname:"/studentdetails", state:{firstname:item.firstname,lastname:item.lastname,roll:item.roll,
-                    thesis:item.thesis}}}>
+                    thesis:item.thesis,id:item.id}}}>
                          <button className="button">View Details</button>
                      </NavLink> 
                  </li>
+                 <li>
+                   <button className="button_delete"  onClick={()=>deleteinfo(item.id)} >Delete</button>
+                 </li>
+                
              </ul>
 
 

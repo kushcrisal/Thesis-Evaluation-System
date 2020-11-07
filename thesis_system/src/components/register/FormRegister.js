@@ -9,7 +9,7 @@ const FormRegister = () => {
 const year=[2074,2075,2076,2077,2078,2079,2080]
 const year_month=["magh","chaitra"]
 
-const [date,setDate]=useState("2077")
+const [date,setDate]=useState("2078")
 const [month,setMonth]=useState("chaitra")
 
 const [firstname,setFirstname]=useState()
@@ -29,13 +29,8 @@ const register=()=>{
          month:month
      })
      .then(function (response) {
-       console.log(response)
-      if(response.data="failed")
-      {alert("failed")}
-      if(response.data="successfully added")
-      {
-        alert("Successfully added")
-      }
+       alert(response.data)
+     
       
     })
 
@@ -43,6 +38,11 @@ const register=()=>{
       console.log(error);
       alert("failed")
     })
+
+    setFirstname("")
+    setLastname("")
+    setRoll("")
+    setThesis("")
 }
 
 
@@ -93,6 +93,7 @@ const  setYearmonth=(item)=>{
             name='StudentName '
             className='form-input'
             placeholder='First Name'
+            value={firstname}
             onChange={(event)=>setFirstname(event.target.value)}
             />
             <input
@@ -102,6 +103,7 @@ const  setYearmonth=(item)=>{
             className='form-input'
             placeholder='Last Name'
             onChange={(event)=>setLastname(event.target.value)}
+            value={lastname}
             />
             </div>
             </div>
@@ -118,6 +120,7 @@ const  setYearmonth=(item)=>{
             className='form-input'
             placeholder='Roll'
             onChange={(event)=>setRoll(event.target.value)}
+            value={roll}
             />
             </div>
 
@@ -134,6 +137,7 @@ const  setYearmonth=(item)=>{
             className='form-input'
             placeholder='Thesis-Title'
             onChange={(event)=>setThesis(event.target.value)}
+            value={thesis}
             />
             </div>
 
