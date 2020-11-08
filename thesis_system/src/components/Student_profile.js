@@ -29,6 +29,7 @@ function Student_profile(props) {
 <text className="studentother">Thesis-Title:{props.location.state.thesis} </text>
    
    </div>
+   <div>mid-term marks:0</div>
   
    
    </div>

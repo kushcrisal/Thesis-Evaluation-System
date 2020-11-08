@@ -1,65 +1,94 @@
-import { Input } from "antd"
-import { useCombobox } from "downshift"
+
 import React, { useEffect, useState } from "react"
+import { Link, NavLink } from "react-router-dom";
+import axios from 'axios'
+
+
 import "./search.css"
 
+
 const Search=()=> {
-  const [inputItems, setInputItems] = useState([])
-  const [users, setUsers] = useState([])
-  const [singleUser, setSingleUser] = useState("")
+  const [studentinfo,setStudentinfo]=useState([])
+  const [letter,setLetter]=useState(" ")
+  
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-  }, [])
+useEffect(()=>{
+  axios.post('http://localhost:80/thesis/search.php/',
+  {letter:letter})
+  .then(response=>{
 
-  const {
-    isOpen,
-    getMenuProps,
-    getInputProps,
-    getComboboxProps,
-    highlightedIndex,
-    getItemProps,
-  } = useCombobox({
-    items: inputItems,
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(
-        users.filter((item) =>
-          item.name.toLowerCase().startsWith(inputValue.toLowerCase())
-        )
-      )
-    },
+   
+    console.log(response)
+    setStudentinfo(response.data)
+   
+    
+    
+  
+    
   })
 
+  
+})
+
+
+  const deleteinfo=(id)=>{
+    axios.post('http://localhost:80/thesis/delete.php/',
+    {id:id})
+    .then(response=>{
+  
+     
+      console.log(response)
+      
+      
+      
+    
+      
+    })
+  
+  }
+
   return (
-    <div className="App">
-      <h2>Current User: {singleUser}</h2>
-      <div {...getComboboxProps()}>
-        <Input
-          {...getInputProps()}
-          placeholder="Search"
-          enterButton="Search"
-          size="large"
-        />
-      </div>
-      <ul {...getMenuProps()}>
-        {isOpen &&
-          inputItems.map((item, index) => (
-            <span
-              key={item.id}
-              {...getItemProps({ item, index })}
-              onClick={() => setSingleUser(item.name)}
-            >
-              <li
-                style={highlightedIndex === index ? { background: "#ede" } : {}}
-              >
-                <h4>{item.name}</h4>
-              </li>
-            </span>
-          ))}
-      </ul>
+    <div className="search-body">
+      <input className="input-student" onChangeCapture ={(evt)=>{setLetter(evt.target.value) 
+      } }></input>
+
+      
+
+      {   studentinfo.map((item)=>(
+                 <ul className="listcontainer">
+                     <div className="infobox">
+                 <li className="text">
+                     Roll No: {item.roll}
+                 </li>
+                 <li className="text">
+                     Name: {item.firstname } {item.lastname}
+                 </li>
+                
+                 <li className = "text">
+                     Title: {item.thesis}
+                 </li>
+                 </div>
+               
+                 <li>
+                   
+                     <NavLink to={{pathname:"/studentdetails", state:{firstname:item.firstname,lastname:item.lastname,roll:item.roll,
+                    thesis:item.thesis,id:item.id}}}>
+                         <button className="button">View Details</button>
+                     </NavLink> 
+                 </li>
+                 <li>
+                   <button className="button_delete"  onClick={()=>deleteinfo(item.id)} >Delete</button>
+                 </li>
+                
+             </ul>
+
+
+
+
+            ))}
+
     </div>
+   
   )
 }
 
