@@ -1,0 +1,42 @@
+.markingform {
+  background-color: white;
+  color: white;
+  text-align: center;
+}
+.header {
+  background-color: blue;
+  text-align: center;
+  color: white;
+}
+.tablehead {
+  color: blue;
+}
+.footer {
+  display: flex;
+  background-color: #e6e6fa;
+  text-align: center;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button1 {
+  background-color: red;
+  margin-left: 60px;
+  margin-right: 60px;
+  height: 40px;
+  width: 120px;
+  border-color: red;
+  border-radius: 15px;
+  color: white;
+}
+.button2 {
+  background-color: blue;
+  margin-left: 60px;
+  margin-right: 60px;
+  height: 40px;
+  width: 120px;
+  border-color: blue;
+  border-radius: 15px;
+  color: white;
+}

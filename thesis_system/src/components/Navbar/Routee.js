@@ -10,6 +10,7 @@ import Register from "../register/Form"
 import StudentList from "../studentlist/studentlist"
 import Search from "../search/search"
 import Result from "../resultlist/resultlist"
+import Admin from "../admin/admin"
 
 import "./styles/Router.css";
 
@@ -25,6 +26,7 @@ export class Routee extends Component {
           <Route path="/studentlist" exact component={StudentList} />
           <Route path="/studentdetails" exact component={Profile} />
           <Route path="/resultlist" exact component={Result} />
+          <Route path="/admin" exact component={Admin} />
         </Switch>
       </Router>
     );

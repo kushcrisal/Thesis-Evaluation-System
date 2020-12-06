@@ -33,52 +33,52 @@ function Supervisor() {
     </thead>
     <tbody>
       <tr>
-        <td>Regularity of works</td>
+        <td>Quality of Presentation</td>
         <td>45</td>
         
       </tr>
       <tr>
-        <td>Understanding thesis work and related theory</td>
+        <td>Problem Formulation/Identification/Conceptualization</td>
         <td>90</td>
         
       </tr>
       <tr>
-        <td>Student and performance</td>
+        <td>Methodology/Approach</td>
         <td>9</td>
        
       </tr>
       <tr>
-        <td>Organization of study</td>
+        <td>Literature review</td>
         <td>8</td>
        
       </tr>
       <tr>
-        <td>Timely completion of thesis work</td>
+        <td>Understanding of thesis work and related theory</td>
         <td>90</td>
        
       </tr>
       <tr>
-        <td>Regularity of works</td>
+        <td>Answering to questions</td>
         <td>45</td>
         
       </tr>
       <tr>
-        <td>Understanding thesis work and related theory</td>
+        <td>Completenes of thesis work</td>
         <td>90</td>
         
       </tr>
       <tr>
-        <td>Student and performance</td>
+        <td>Planning of organization of thesis work</td>
         <td>9</td>
        
       </tr>
       <tr>
-        <td>Organization of study</td>
+        <td>Originality of research & Scholar's contribution</td>
         <td>8</td>
        
       </tr>
       <tr>
-        <td>Timely completion of thesis work</td>
+        <td>Conclusions, Suggestions and Recommendation</td>
         <td>90</td>
        
       </tr>

@@ -5,11 +5,11 @@ import Axios from 'axios'
 
 
 
-import "./mid_supmodel.css"
+import "./final_supmodel.css"
 
 
 
-const Mid_supmodel=({ Visible,close,id})=> {
+const Final_supmodel=({ Visible,close,id})=> {
   const [cat1,setCat1]=useState(0)
   const [cat2,setCat2]=useState(0)
   const [cat3,setCat3]=useState(0)
@@ -19,7 +19,7 @@ const Mid_supmodel=({ Visible,close,id})=> {
     
    const inputMarks=()=>{
 
-        Axios.post('http://localhost:80/thesis/midSupervisor/inputmarks.php/',{
+        Axios.post('http://localhost:80/thesis/finalSupervisor/finalinputmarks.php/',{
           id:id,
        cat1:cat1,
        cat2:cat2,
@@ -92,7 +92,7 @@ const Mid_supmodel=({ Visible,close,id})=> {
                             
                             </tr>
                             <tr>
-                                <td>understanding thesis work</td> 
+                                <td>Understanding the thesis work & related theory</td> 
                                 <td>20</td>
                                 <td>
                                 <input
@@ -162,4 +162,4 @@ const Mid_supmodel=({ Visible,close,id})=> {
     )
 }
 
-export default Mid_supmodel
+export default Final_supmodel

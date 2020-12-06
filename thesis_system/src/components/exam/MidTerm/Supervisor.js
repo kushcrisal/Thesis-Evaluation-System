@@ -25,7 +25,7 @@ useEffect(()=>{ Axios.get('http://localhost:80/thesis/teacherlist.php')
 useEffect(()=>{
 
 
-  Axios.post('http://localhost:80/thesis/get_midsupervisor_marks.php/',{id:props.id})
+  Axios.post('http://localhost:80/thesis/midSupervisor/get_midsupervisor_marks.php/',{id:props.id})
   .then(response=>{
     setSection(response.data)
     console.log(response)
@@ -42,7 +42,7 @@ const onclose=()=>{
 const update=()=>
 {
  
-  Axios.post('http://localhost:80/thesis/update_teachername.php/',
+  Axios.post('http://localhost:80/thesis/midSupervisor/update_teachername.php/',
   {id:props.id,
   teachername:teacher})
   .then(response=>{
@@ -111,25 +111,26 @@ const update=()=>
         
       </tr>
       <tr>
-        <td>Understanding thesis work and related theory</td>
+        <td>Degree of Completeness of thesis</td>
         <td>{item.cat2}</td>
+       
+      </tr>
+      <tr>
+        <td>Understanding thesis work and related theory</td>
+        <td>{item.cat3}</td>
         
       </tr>
       <tr>
-        <td>Student and performance</td>
-        <td>{item.cat3}</td>
+        <td>Student effort and performance</td>
+        <td>{item.cat4}</td>
        
       </tr>
       <tr>
         <td>Organization of study</td>
-        <td>{item.cat3}</td>
+        <td>{item.cat5}</td>
        
       </tr>
-      <tr>
-        <td>Timely completion of thesis work</td>
-        <td>{item.cat4}</td>
-       
-      </tr>
+      
      
      
     </tbody>

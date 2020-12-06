@@ -9,7 +9,7 @@ import External from "./FinalTerm/external"
 
 import "./styles/finalterm.css"
 
-function FinalTerm() {
+function FinalTerm(props) {
     const [section,setSection]=useState("supervisor")
     return (
         <div className="marks_section_title">
@@ -31,10 +31,10 @@ function FinalTerm() {
         
         <div className="marks_value">
             
-            {section==="supervisor" && <Supervisor/>}
-            {section==="committee" && <Committee/>}
+            {section==="supervisor" && <Supervisor id={props.id}/>}
+            {section==="committee" && <Committee id={props.id}/>}
             {
-                section==="external" && <External/>
+                section==="external" && <External id={props.id}/>
             }
             
             </div>

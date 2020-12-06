@@ -5,7 +5,7 @@ import "./styles/Nav.css";
 import { IoMdPerson, IoMdPersonAdd } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { CgUserList } from "react-icons/cg";
-import { darkblue } from "color-name";
+import { GrUserAdmin } from "react-icons/gr";
 
 export default function Nav() {
   const [colour, setColour] = useState("darkblue");
@@ -38,6 +38,11 @@ export default function Nav() {
           <li className="Nav-links">
             <NavLink to="/resultlist" activeStyle={{ color: colour }}>
               <CgUserList size={30} />
+            </NavLink>
+          </li>
+          <li className="Nav-links">
+            <NavLink to="/admin"  activeStyle={{ color: colour }}>
+              <CgUserList size={40} />
             </NavLink>
           </li>
         </ul>

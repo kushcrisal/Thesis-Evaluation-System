@@ -27,52 +27,52 @@ function Supervisor() {
     </thead>
     <tbody>
       <tr>
-        <td>Regularity of works</td>
+        <td>Standard of technical language, expression and format</td>
         <td>45</td>
         
       </tr>
       <tr>
-        <td>Understanding thesis work and related theory</td>
+        <td>Problem formulation, research identification and formulation of research topic</td>
         <td>90</td>
         
       </tr>
       <tr>
-        <td>Student and performance</td>
+        <td>Selection of research methodology (research method and tools)</td>
         <td>9</td>
        
       </tr>
       <tr>
-        <td>Organization of study</td>
+        <td>Quality of data processing and result interpretation</td>
         <td>8</td>
        
       </tr>
       <tr>
-        <td>Timely completion of thesis work</td>
+        <td>Matching and finding with objectives</td>
         <td>90</td>
        
       </tr>
       <tr>
-        <td>Regularity of works</td>
+        <td>Logic reasoning, conclusions and interpretation</td>
         <td>45</td>
         
       </tr>
       <tr>
-        <td>Understanding thesis work and related theory</td>
+        <td>Quality of abstract</td>
         <td>90</td>
         
       </tr>
       <tr>
-        <td>Student and performance</td>
+        <td>Originality of research</td>
         <td>9</td>
        
       </tr>
       <tr>
-        <td>Organization of study</td>
+        <td>Scope of research</td>
         <td>8</td>
        
       </tr>
       <tr>
-        <td>Timely completion of thesis work</td>
+        <td>Answer to the examiner's question</td>
         <td>90</td>
        
       </tr>
