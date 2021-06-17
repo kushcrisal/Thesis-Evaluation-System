@@ -6,35 +6,38 @@ import { Button, Modal } from 'react-bootstrap'
 
 
 import Inputmodal from "./New folder/final_supmodel"
+import AppInput from "../../reusable components/AppTeacherInput"
 
 import "./style/supervisor.css"
 
-function Supervisor(props) 
+function Supervisor({id,getfinalmarks}) 
 {
   const [visible,setVisible]=useState(false)
   const [section,setSection]=useState([])
 const [teacher,setTeacher]=useState()
-const [teacherlist,setTeacherlist]=useState([])
 
 
-useEffect(()=>{ Axios.get('http://localhost:80/thesis/teacherlist.php')
-.then(response=>{
-  setTeacherlist(response.data)
-})
 
 
-},[])
-useEffect(()=>{
 
-
-  Axios.post('http://localhost:80/thesis/finalSupervisor/get_finalsupervisor_marks.php/',{id:props.id})
+const getmarks=()=>{
+  
+  Axios.post('http://localhost:80/thesis/finalSupervisor/get_finalsupervisor_marks.php/',{id:id})
   .then(response=>{
     setSection(response.data)
     console.log(response)
+    getfinalmarks()
 
   })
+
+
+}
+useEffect(()=>{
+  getmarks()
+
+
  
-})
+},[])
 
 const onclose=()=>{
 
@@ -45,11 +48,11 @@ const update=()=>
 {
  
   Axios.post('http://localhost:80/thesis/finalSupervisor/final_sup_teacher.php/',
-  {id:props.id,
+  {id:id,
   teachername:teacher})
   .then(response=>{
 
-   
+   getmarks()
     console.log(response)
     
    
@@ -71,18 +74,7 @@ const update=()=>
            <div className="addteacher">
              
 
-<input  list="teacherlist" onChange={(event)=>setTeacher(event.target.value)  }    value={teacher}/>
-
-<datalist id="teacherlist">
-  { teacherlist.map((item)=>(
-     <option value={item.name}/>
-
-  )) }
- 
-  
-
-
-</datalist>
+           <AppInput handleInput={(value)=>setTeacher(value)} teacher={teacher}/>
 
 
 
@@ -132,11 +124,16 @@ const update=()=>
         <td>{item.cat5}</td>
        
       </tr>
+      <tr>
+        <td>Total</td>
+        <td>{item.total}</td>
+       
+      </tr>
      
       
     </tbody>
     </table>
-    {visible && <Inputmodal Visible={visible} close={()=>onclose()} id={props.id}/>}
+    {visible && <Inputmodal Visible={visible} getmarks={getmarks}close={()=>onclose()} id={id}/>}
   <div > <Button className="Marks_Giver_Button" onClick={()=>{setVisible(true)}}>Update</Button></div>
             </div>
 

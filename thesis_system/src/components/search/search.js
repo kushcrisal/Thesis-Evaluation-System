@@ -10,10 +10,10 @@ import "./search.css"
 const Search=()=> {
   const [studentinfo,setStudentinfo]=useState([])
   const [letter,setLetter]=useState(" ")
+  const [counter,setCounter]=useState(0)
   
-
-useEffect(()=>{
-  axios.post('http://localhost:80/thesis/search.php/',
+  const getinfo=()=>{
+    axios.post('http://localhost:80/thesis/search.php/',
   {letter:letter})
   .then(response=>{
 
@@ -27,18 +27,32 @@ useEffect(()=>{
     
   })
 
-  
-})
 
+
+  }
+
+useEffect(()=>{
+  getinfo()
+  
+
+  
+},[counter])
+
+const changehandler=(text)=>{
+  setLetter(text)
+  setCounter(counter+1)
+
+
+}
 
   const deleteinfo=(id)=>{
-    axios.post('http://localhost:80/thesis/delete.php/',
+    axios.post('http://localhost:80/thesis/student/delete.php/',
     {id:id})
     .then(response=>{
   
      
       console.log(response)
-      
+      getinfo()
       
       
     
@@ -49,7 +63,7 @@ useEffect(()=>{
 
   return (
     <div className="search-body">
-      <input className="input-student" onChangeCapture ={(evt)=>{setLetter(evt.target.value) 
+      <input className="input-student" placeholder="Enter firstname or lastname" onChangeCapture ={(evt)=>{changehandler(evt.target.value) 
       } }></input>
 
       

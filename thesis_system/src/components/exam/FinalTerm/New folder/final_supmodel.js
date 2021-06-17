@@ -9,12 +9,19 @@ import "./final_supmodel.css"
 
 
 
-const Final_supmodel=({ Visible,close,id})=> {
+const Final_supmodel=({ Visible,close,id,getmarks})=> {
   const [cat1,setCat1]=useState(0)
   const [cat2,setCat2]=useState(0)
   const [cat3,setCat3]=useState(0)
   const [cat4,setCat4]=useState(0)
   const [cat5,setCat5]=useState(0)
+  const calculate=()=>{
+    
+    
+    const sum=parseInt(cat1)+parseInt(cat2)+parseInt(cat3)+parseInt(cat4)+parseInt(cat5)
+   return sum;
+
+ }
     
     
    const inputMarks=()=>{
@@ -26,12 +33,13 @@ const Final_supmodel=({ Visible,close,id})=> {
        cat3:cat3,
        cat4:cat4,
        cat5:cat5,
+       total:calculate(),
 
        
 
      })
      .then(function (response) {
-       alert(response.data)
+       getmarks()
      
       
     })
@@ -62,7 +70,7 @@ const Final_supmodel=({ Visible,close,id})=> {
         
       <div class="header">
         
-        <h1>Supervisor  </h1>
+    <h1>Supervisor  </h1>
         
           </div>
       <Modal.Body class="markingform">
@@ -141,6 +149,11 @@ const Final_supmodel=({ Visible,close,id})=> {
                                 
                             
                                 /></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td> 
+                                <td>100</td>
+                                <td> {calculate()} </td>
                             </tr>
                            
                             

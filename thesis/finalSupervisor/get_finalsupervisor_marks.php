@@ -21,6 +21,7 @@ if($result=mysqli_query($conn,$query))
   $studentinfo[$count]['cat3']=$row['StudentEffort_and_performance'];
   $studentinfo[$count]['cat4']=$row['Organization_of_study'];
   $studentinfo[$count]['cat5']=$row['TimelyCompletion_of_ThesisWork'];
+      $studentinfo[$count]['total']=$row['total'];
 
     $count++;
   }

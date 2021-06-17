@@ -3,14 +3,20 @@
 $conn=mysqli_connect("localhost","root","","thesis");
 $data = json_decode(file_get_contents("php://input"), true);
 $letter=$data['letter'];
+$students=array();
 
 
+if(empty($letter))
+{
+  echo json_encode($students);
 
+}
+else{
 
 $query="SELECT * from studentinfo where Firstname like '$letter%' or Lastname like '$letter%' ";
 
 
-$students=array();
+
 
 if($result=mysqli_query($conn,$query))
 {
@@ -33,7 +39,7 @@ else {
 }
 
 
-
+}
 
 
 

@@ -5,6 +5,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 $date=$data['yeardate'];
 $month=$data['yearmonth'];
 
+
 $query="SELECT * FROM `studentinfo` where `Dateid`=((SELECT Dateid from `date` where Year='$date' AND Month='$month'))" ;
 
 

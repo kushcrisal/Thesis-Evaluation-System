@@ -6,16 +6,47 @@
   padding-right: 100px;
   width: 100%;
   height: 91.2%;
+  display: flex;
+  flex-direction: row;
 
   overflow: scroll;
+  background-color: #e6e6fa;
+}
+.selected-button {
+  width: 100%;
+  background-color: darkblue;
+}
+.selected-button:focus {
+  width: 100%;
+  background-color: darkblue;
+  outline: none;
+  box-shadow: none;
+}
+.button-section {
+  margin-top: 10px;
+  position: relative;
+  width: 19%;
+  height: 90%;
+  background-color: white;
+}
+.choice-button {
+  width: 100%;
+  background-color: blue;
+}
+.admin-border {
+  position: relative;
+  height: 90%;
+  width: 0.5%;
   background-color: #e6e6fa;
 }
 .teacher-section {
   margin-top: 10px;
   position: relative;
-  width: 100%;
-  height: 50%;
-  background-color: blueviolet;
+  width: 80%;
+  height: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 .teacher-head {
   position: relative;
@@ -28,4 +59,70 @@
   font-size: large;
   font-weight: bold;
   color: white;
+}
+.add-teacher {
+  position: relative;
+  height: 15%;
+  width: 100%;
+  display: flex;
+  background-color: white;
+}
+.input-box {
+  width: 35%;
+  height: 35px;
+  margin: 15px;
+}
+.add-button {
+  width: 30%;
+  height: 35px;
+  margin: 15px;
+}
+.hborder {
+  position: relative;
+  height: 1.1%;
+  width: 100%;
+  background-color: #e6e6fa;
+}
+
+.teacher-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: scroll;
+}
+.list-box {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10%;
+}
+.list-name {
+  position: relative;
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5px;
+}
+
+.text-name {
+  position: relative;
+  margin-left: 15%;
+  width: 50%;
+}
+
+.box-border {
+  position: relative;
+  width: 100%;
+  height: 5%;
+  background-color: #e6e6fa;
+}
+.Teacher-id {
+  color: blue;
+  margin-left: 15%;
+  font-size: large;
+  font-weight: bold;
 }

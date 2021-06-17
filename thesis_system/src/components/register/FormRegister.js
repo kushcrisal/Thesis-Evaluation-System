@@ -3,11 +3,15 @@ import axios from 'axios';
 
 
 import {Button,ButtonGroup,DropdownButton,Dropdown} from 'react-bootstrap'
+
+
+
+
+import AppButton from "../reusable components/AppDropBtn"
 const FormRegister = () => {
 
 
-const year=[2074,2075,2076,2077,2078,2079,2080]
-const year_month=["magh","chaitra"]
+
 
 const [date,setDate]=useState("2078")
 const [month,setMonth]=useState("chaitra")
@@ -19,7 +23,7 @@ const [thesis,setThesis]=useState()
 
 const register=()=>{
  
-  axios.post('http://localhost:80/thesis/insert.php/',{
+  axios.post('http://localhost:80/thesis/student/insert.php/',{
          
          firstname:firstname,
          lastname:lastname,
@@ -50,14 +54,13 @@ const register=()=>{
 
 
 
-const setYear=(item)=>
+const setYearMonth=(item)=>
 {
-  setDate(item)
+  setDate(item.year)
+  setMonth(item.month)
 
 }
-const  setYearmonth=(item)=>{
-  setMonth(item)
-}
+
     return(
    <form className='form'>
         <h1>
@@ -65,19 +68,9 @@ const  setYearmonth=(item)=>{
         </h1>
         <div className='form-inputs'>
         <div className='Date'>
+        <AppButton handleDate={setYearMonth}/>
 
-        <ButtonGroup>
-
-<DropdownButton as={ButtonGroup} title="Year" id="bg-nested-dropdown">
-  {year.map((item,index)=>( <Dropdown.Item eventKey={index} onClick={()=>setYear(item)}  >{item}</Dropdown.Item>))}
- 
-</DropdownButton>
-<DropdownButton as={ButtonGroup} title="Month" id="bg-nested-dropdown">
-    {year_month.map((item,index)=>(<Dropdown.Item eventKey={index} onClick={()=>setYearmonth(item)}>{item}</Dropdown.Item>))}
-  
- 
-</DropdownButton>
-</ButtonGroup>{''}
+{''}
     <text className="yeardate"> {date}  </text>
     <text className="yearmonth"> {month}  </text>
 

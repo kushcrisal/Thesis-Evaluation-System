@@ -6,6 +6,7 @@ import { IoMdPerson, IoMdPersonAdd } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { CgUserList } from "react-icons/cg";
 import { GrUserAdmin } from "react-icons/gr";
+import { RiAdminFill } from "react-icons/ri";
 
 export default function Nav() {
   const [colour, setColour] = useState("darkblue");
@@ -42,7 +43,7 @@ export default function Nav() {
           </li>
           <li className="Nav-links">
             <NavLink to="/admin"  activeStyle={{ color: colour }}>
-              <CgUserList size={40} />
+              <RiAdminFill size={30} />
             </NavLink>
           </li>
         </ul>

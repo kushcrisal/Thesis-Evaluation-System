@@ -9,7 +9,7 @@ import External from "./MidTerm/external"
 import "./styles/finalterm.css"
 
 
-function MidTerm(props) {
+function MidTerm({getfinalmarks,id}) {
   const [section,setSection]=useState("supervisor")
   
     return (
@@ -20,9 +20,11 @@ function MidTerm(props) {
         <div className="marksinfo_block">
         <div className="marks_giver">
           <ButtonGroup vertical className="Buttongroup">
-          <Button autoFocus={true} className="Marks_Giver_Button" onClick={()=>setSection("supervisor")}>Supervisor</Button>
-          <Button className="Marks_Giver_Button" onClick={()=>setSection("external")}>External</Button>
-          <Button className="Marks_Giver_Button" onClick={()=>setSection("committee")}>Committee</Button>
+          <Button autoFocus={true} className={section==="supervisor"?"clicked":"Marks_Giver_Button"} onClick={()=>setSection("supervisor")}>Supervisor</Button>
+          <Button className={section==="external"?"clicked":"Marks_Giver_Button"} onClick={()=>setSection("external")}>External</Button>
+          <Button className={section==="committee"?"clicked":"Marks_Giver_Button"} onClick={()=>setSection("committee")}>Committee</Button>
+          
+        
             
   
   
@@ -32,10 +34,10 @@ function MidTerm(props) {
           </div>
          
           <div className="marks_value">
-          {section==="supervisor" && <Supervisor id={props.id}/>}
-            {section==="committee" && <Committee id={props.id}/>}
+          {section==="supervisor" && <Supervisor id={id} getfinalmarks={getfinalmarks}/>}
+            {section==="committee" && <Committee id={id} getfinalmarks={getfinalmarks}/>}
             {
-                section==="external" && <External id={props.id}/>
+                section==="external" && <External id={id} getfinalmarks={getfinalmarks}/>
             }
           </div>
           </div>

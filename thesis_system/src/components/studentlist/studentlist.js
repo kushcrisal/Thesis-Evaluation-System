@@ -1,42 +1,35 @@
 import React,{useEffect, useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from 'axios'
+import {Button,ButtonGroup,DropdownButton,Dropdown} from 'react-bootstrap'
 
 
 
 import "./studentlist.css";
-import {Button,ButtonGroup,DropdownButton,Dropdown} from 'react-bootstrap'
+import AppButton from "../reusable components/AppDropBtn"
+import AppWarn from "../reusable components/AppWarn"
+
+
 
 const Studentlist = () => {
 
-    const year=[2074,2075,2076,2077,2078,2079,2080]
-const year_month=["magh","chaitra"]
+    
 
 
-const [date,setDate]=useState("2078")
-const [month,setMonth]=useState("chaitra")
+const [date,setDate]=useState(2078)
+const [month,setMonth]=useState("Chaitra")
 const [studentinfo,setStudentinfo]=useState([])
+const [counter,setCounter]=useState(0)
+const [show,setShow]=useState(false)
+const[deleteid,setDeleteid]=useState()
 
-const deleteinfo=(id)=>{
-  axios.post('http://localhost:80/thesis/delete.php/',
-  {id:id})
-  .then(response=>{
 
-   
-    console.log(response)
-    
-    
-    
-  
-    
-  })
 
-}
 
 const getstudentinfo=()=>{
   console.log(month)
   console.log(date)
-  axios.post('http://localhost:80/thesis/upload.php/',
+  axios.post('http://localhost:80/thesis/student/upload.php/',
   {yeardate:date,
   yearmonth:month})
   .then(response=>{
@@ -57,35 +50,45 @@ const getstudentinfo=()=>{
 
 useEffect(()=>{
   
-    axios.post('http://localhost:80/thesis/upload.php/',
-  {yeardate:date,
-  yearmonth:month})
+    getstudentinfo()
+  
+
+},[counter])
+const setYearMonth=(item)=>
+{
+
+  setDate(item.year)
+  setMonth(item.month)
+  
+
+  setCounter(counter+1)
+ 
+  
+}
+const deleteinfo=(id)=>{
+  axios.post('http://localhost:80/thesis/student/delete.php/',
+  {id:id})
   .then(response=>{
 
    
     console.log(response)
-    setStudentinfo(response.data)
-   
+    
+    
+    getstudentinfo()
+    setShow(false)
   
+    
   })
+
   
 
-})
-const setYear=(item)=>
-{
-
-  setDate(item)
-
-  getstudentinfo();
- 
-  
 }
-const  setYearmonth=(item)=>{
-  setMonth(item)
-  
-  getstudentinfo();
 
-  
+const ondelete=(id)=>
+{
+  setShow(true)
+  setDeleteid(id)
+  console.log(deleteid)
 }
 
 
@@ -101,18 +104,7 @@ const  setYearmonth=(item)=>{
 
             <div className='Date2'>
 
-<ButtonGroup className="dategroup">
-
-<DropdownButton as={ButtonGroup}  className="dropbutton"  title="Year" id="bg-nested-dropdown">
-{year.map((item,index)=>( <Dropdown.Item eventKey={index} onClick={()=>setYear(item)}  >{item}</Dropdown.Item>))}
-
-</DropdownButton>
-<DropdownButton as={ButtonGroup} title="Month" id="bg-nested-dropdown">
-{year_month.map((item,index)=>(<Dropdown.Item eventKey={index} onClick={()=>setYearmonth(item)}>{item}</Dropdown.Item>))}
-
-
-</DropdownButton>
-</ButtonGroup>{''}
+            <AppButton handleDate={setYearMonth}/>{''}
 
 
 </div >
@@ -124,6 +116,7 @@ const  setYearmonth=(item)=>{
 
 
             <h2>{date}  {month} </h2>
+            {show && <AppWarn Show={show} ondelete={deleteinfo} onhide={()=>setShow(false)}  id={deleteid} />}
         
             {   studentinfo.map((item)=>(
                  <ul className="listcontainer">
@@ -148,7 +141,7 @@ const  setYearmonth=(item)=>{
                      </NavLink> 
                  </li>
                  <li>
-                   <button className="button_delete"  onClick={()=>deleteinfo(item.id)} >Delete</button>
+                   <button className="button_delete"  onClick={()=>ondelete(item.id)} >Delete</button>
                  </li>
                 
              </ul>

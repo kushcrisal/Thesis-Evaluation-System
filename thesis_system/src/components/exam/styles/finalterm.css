@@ -66,3 +66,16 @@
 
   border-color: white;
 }
+.clicked {
+  background-color: darkblue;
+  border-radius: 0;
+  position: relative;
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+}
+.clicked:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: darkblue;
+}
